@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#93000a","surface-container-high":"#f6e5db","error":"#ba1a1a","surface-container-lowest":"#ffffff","primary-fixed":"#b2edeb","on-tertiary":"#ffffff","surface-variant":"#f0dfd6","inverse-on-surface":"#ffede4","surface-dim":"#e7d7cd","background":"#fff8f5","primary-fixed-dim":"#97d1cf","tertiary":"#6e2413","on-tertiary-fixed-variant":"#7b2e1c","on-surface-variant":"#404848","surface-container-highest":"#f0dfd6","tertiary-fixed":"#ffdad2","secondary-container":"#fec97b","outline":"#707978","on-secondary-container":"#78520e","on-background":"#221a14","on-error":"#ffffff","outline-variant":"#bfc8c7","on-tertiary-container":"#ffb6a6","primary-container":"#1f5c5b","surface":"#fff8f5","inverse-surface":"#382e28","surface-tint":"#2c6766","surface-container-low":"#fff1e9","tertiary-fixed-dim":"#ffb4a3","tertiary-container":"#8c3a27","on-tertiary-fixed":"#3d0600","on-secondary-fixed-variant":"#614000","inverse-primary":"#97d1cf","secondary-fixed":"#ffddb1","surface-bright":"#fff8f5","on-secondary-fixed":"#291800","surface-container":"#fcebe1","on-primary-fixed":"#00201f","error-container":"#ffdad6","on-secondary":"#ffffff","on-primary":"#ffffff","secondary":"#7e5713","on-primary-fixed-variant":"#0c4f4e","secondary-fixed-dim":"#f2be71","primary":"#004443","on-surface":"#221a14","on-primary-container":"#98d2d0"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"margin":"2rem","space-xl":"2.5rem","gutter":"1.5rem","space-md":"1rem","gutter-mobile":"1rem","space-xs":"0.25rem","space-lg":"1.5rem","margin-mobile":"1.25rem","space-sm":"0.5rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-md":["Merriweather"],"headline-md":["Merriweather"],"body-sm":["Plus Jakarta Sans"],"headline-lg":["Merriweather"],"label-md":["Plus Jakarta Sans"],"display-mobile":["Merriweather"],"headline-sm":["Merriweather"],"headline-lg-mobile":["Merriweather"],"body-lg":["Merriweather"],"display":["Merriweather"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"28px","fontWeight":"300"}],"headline-md":["24px",{"lineHeight":"34px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"42px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"display-mobile":["34px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"32px","fontWeight":"300"}],"display":["48px",{"lineHeight":"60px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-lg pb-space-lg shadow-[1px_0_12px_rgba(45,36,30,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><img alt="Narra Logo Pluma y Tintero" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8p9xcZDLojdz67mtVyqDHhV21PzuKTq7bCRYPs2sv030o3y78Bvhyu_OUYFYEdNhcgU0WjYKrs58lWJ2_yt9bFWHeRXDA-wZFdH3p4l4gnzw5bs24DhKcbFKlGXrkJve8C7ZfiRVkM0SfIltwH7TodARBMD10jFJFMmG5FXdl8xKU3CicCY16foiCPP4dXB8H6tTpRa6WBkY2FB__U1CTOwMdEbJ8UovgTYHLVi7CZlCz-46NDIeo9g"/><span class="font-headline-sm text-headline-sm text-primary font-bold">Narra</span></div><div class="px-space-md mb-space-lg"><a class="flex items-center justify-center gap-space-xs w-full py-space-sm px-space-md rounded-full bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container hover:text-on-primary transition-all shadow-[0_2px_8px_rgba(0,68,67,0.18)]" data-path="editor" href="#"><span class="material-symbols-outlined text-sm">history_edu</span><span>Nueva Crónica</span></a></div><nav class="flex-1 px-space-md flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-xl"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-surface-container-high text-on-surface font-semibold rounded-xl" data-path="mis-historias" href="#"><span class="material-symbols-outlined text-lg">auto_stories</span><span>Mis historias</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="cuadernos" href="#"><span class="material-symbols-outlined text-lg">menu_book</span><span>Cuadernos y Diarios</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="borradores" href="#"><span class="material-symbols-outlined text-lg">drafts</span><span>Tinta en Borrador</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="archivo" href="#"><span class="material-symbols-outlined text-lg">inventory_2</span><span>Archivo Histórico</span></a></nav><div class="px-space-md pt-space-md flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABV-5S79JndsuN8EHnbgTUb-4WmTvshbZSGLsYOPntCeZCMAcZjLxv0BuYz30ZWW7SntnQtKyhr1VmXp-UD3pZ7qgRb4CmHrTCs-nrckXdPaaMVROXEcHqfXMxesA7r375pQMNUDVw-SeZ_5a_uFGZVVmQ8nkL1Fw6HhsiGNJgWc-gD6qd-fWBNRX3_plPyFLJvUIOA6PdF3nNtm3OUIBWHmZIc-SQ6q0WdCb9ZxO2nQZGBWctF9OI8g"/><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface font-semibold">Cronista</span><span class="font-label-sm text-label-sm text-outline">Tinta activa</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(45,36,30,0.05)] z-40 flex items-center justify-between px-space-lg"><nav class="hidden md:flex items-center gap-space-xs p-space-xs bg-surface-container-low/70 rounded-full" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-full"><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="inicio" href="#">Inicio</a><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-surface-container-high text-on-surface font-semibold rounded-full" data-path="mis-historias" href="#">Mis historias</a><a class="px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="explorar" href="#">Explorar</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container hover:text-on-primary transition-all shadow-[0_2px_8px_rgba(0,68,67,0.18)]" data-path="editor" href="#"><span class="material-symbols-outlined text-sm">edit</span><span>Escribir</span></a><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABV-5S79JndsuN8EHnbgTUb-4WmTvshbZSGLsYOPntCeZCMAcZjLxv0BuYz30ZWW7SntnQtKyhr1VmXp-UD3pZ7qgRb4CmHrTCs-nrckXdPaaMVROXEcHqfXMxesA7r375pQMNUDVw-SeZ_5a_uFGZVVmQ8nkL1Fw6HhsiGNJgWc-gD6qd-fWBNRX3_plPyFLJvUIOA6PdF3nNtm3OUIBWHmZIc-SQ6q0WdCb9ZxO2nQZGBWctF9OI8g"/></div></div></header><main class="relative pt-20 w-full min-h-screen bg-background"><div class="flex flex-col w-full">
+<!-- Archival Ambient Background Watermark -->
+<div class="relative w-full px-space-lg lg:px-margin py-space-lg max-w-7xl mx-auto">
+<!-- Top Breadcrumb & User Context Sub-header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md mb-space-lg gap-space-sm">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-md text-label-md">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">auto_stories</span>
+<span>Narra</span>
+</span>
+<span>/</span>
+<span class="text-primary font-semibold">Tinta &amp; Manuscritos</span>
+<span>/</span>
+<span class="text-on-surface">Mis historias</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Sincronizado con pluma</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-full text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">local_library</span>
+<span>Cuaderno N.° 04</span>
+</div>
+</div>
+</div>
+<!-- Page Title & Primary Actions Header -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-base">mobile_arrow_right</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Espacio Personal del Cronista</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Mis historias
+        </h1>
+<div class="flex items-center gap-space-sm mt-1">
+<p class="font-body-md text-body-md text-on-surface-variant">
+            5 relatos encuadernados • <span class="text-tertiary-container font-medium">1 borrador en curso</span>
+</p>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-outline">10.508 palabras totales</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">file_download</span>
+<span>Exportar compendio</span>
+</button>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container hover:text-on-primary transition-all shadow-[0_4px_16px_rgba(0,68,67,0.22)] group" data-path="editor" href="#">
+<span class="material-symbols-outlined text-lg transition-transform group-hover:rotate-12">edit_note</span>
+<span class="font-semibold">+ Nueva historia</span>
+</a>
+</div>
+</section>
+<!-- Artisanal Controls Bar: Search, Filters & View Switches -->
+<div class="bg-surface-container-low rounded-2xl p-space-md mb-space-xl shadow-[0_2px_12px_rgba(45,36,30,0.03)] flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[260px]">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span>
+<input class="w-full pl-10 pr-space-md py-space-xs bg-surface rounded-xl text-on-surface placeholder:text-outline font-body-sm text-body-sm outline-none transition-all shadow-inner focus:bg-surface-container-lowest" placeholder="Buscar entre mis historias por título, lugar o verso..." type="text"/>
+</div>
+<!-- Filter Dropdowns Row -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<!-- Categoría -->
+<div class="relative group">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">category</span>
+<span class="text-outline">Categoría:</span>
+<span class="font-semibold text-primary">Todas</span>
+<span class="material-symbols-outlined text-xs text-outline">expand_more</span>
+</button>
+</div>
+<!-- Etiqueta -->
+<div class="relative group">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">label</span>
+<span class="text-outline">Etiqueta:</span>
+<span class="font-semibold text-primary">Todas</span>
+<span class="material-symbols-outlined text-xs text-outline">expand_more</span>
+</button>
+</div>
+<!-- Ordenación Fecha -->
+<div class="relative group">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">schedule</span>
+<span class="text-outline">Orden:</span>
+<span class="font-semibold text-primary">Recientes</span>
+<span class="material-symbols-outlined text-xs text-outline">expand_more</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/40 hidden sm:block mx-1"></div>
+<!-- View Switcher -->
+<div class="flex items-center bg-surface p-1 rounded-xl shadow-sm">
+<button aria-label="Vista de cuadrícula" class="p-space-xs rounded-lg bg-surface-container text-primary shadow-xs" type="button">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+</button>
+<button aria-label="Vista de lista" class="p-space-xs rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">view_agenda</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Filter Tags Cloud -->
+<div class="flex items-center gap-space-xs flex-wrap mb-space-lg text-label-sm font-label-sm">
+<span class="text-outline uppercase tracking-wider pl-1">Filtrar por tema:</span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-medium">#Todos (6)</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high cursor-pointer transition-colors">#Faro (1)</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high cursor-pointer transition-colors">#Viajes (2)</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high cursor-pointer transition-colors">#Borradores (2)</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high cursor-pointer transition-colors">#Naturaleza (1)</span>
+</div>
+<!-- Manuscript Grid (3 Columns, 2 Rows = 6 Items) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- CARD 1: El susurro del faro olvidado -->
+<article class="group relative flex flex-col bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(45,36,30,0.04),0_8px_20px_rgba(45,36,30,0.03)] hover:shadow-[0_12px_28px_rgba(45,36,30,0.08)] transition-all duration-300">
+<!-- Bookmark Ribbon Tag -->
+<div class="absolute top-0 right-6 z-20 w-5 h-8 bg-secondary rounded-b-sm shadow-sm flex items-end justify-center pb-1">
+<span class="w-1 h-1 rounded-full bg-surface-container-lowest opacity-75"></span>
+</div>
+<!-- Cover Image Container -->
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Moody antique stone lighthouse standing upon steep ocean cliffs under dramatic stormy tempestuous skies with soft amber light breaking through the clouds, painterly watercolor and sepia ink wash illustration with fine bookish aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhg3wnvFo2iQ2nnnXMl8HwdNyn-Q_wIfu7uinWnhcVFiGuH3mzir8My5etjHYXzvFDQ0ehW6EOM9kZlUhHtXXbLror4_eARfQn3MNuVEfemczY-xNagg-t4LRm36DdOtCsuNjSZSZ3ZoYeYz9IvswWnSYPhjRrDhtmIona9oqI-V_j2O4JdnIrJS_6k93LN_1SYkZ2aSN01JjBJe2TS-KV51WE0MBGjCX7W8cC0AQxsIDZeuLR9PInrA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/20"></div>
+<!-- Badges Floating Over Image -->
+<div class="absolute bottom-space-sm left-space-md flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-container"></span>
+              Borrador
+            </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-highest/90 backdrop-blur-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">lock</span>
+              Privada
+            </span>
+</div>
+</div>
+<!-- Body Details -->
+<div class="flex-1 p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-snug">
+                El susurro del faro olvidado
+              </h2>
+<!-- Quick Action Menu -->
+<div class="relative">
+<button aria-label="Opciones de historia" class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+              La salitre carcomía los goznes de la vieja torre de vigía. Cada atardecer traía consigo una nota distinta en el viento...
+            </p>
+</div>
+<!-- Card Footer Metadata -->
+<div class="pt-space-sm bg-surface-container-low/50">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">history_edu</span>
+<span>Editado hoy, 11:24</span>
+</div>
+<span class="font-semibold text-on-surface-variant">348 palabras</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary uppercase font-semibold">#Faro • #Misterio</span>
+<a class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-sm text-label-sm font-bold uppercase transition-colors" data-path="editor" href="#">
+<span>Continuar</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 2: Senderos de musgo y piedra -->
+<article class="group relative flex flex-col bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(45,36,30,0.04),0_8px_20px_rgba(45,36,30,0.03)] hover:shadow-[0_12px_28px_rgba(45,36,30,0.08)] transition-all duration-300">
+<!-- Cover Image Container -->
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Enchanted lush ancient temperate forest trail covered in vibrant moss and winding stone steps surrounded by morning golden sun mist and fern leaves, literary realism oil painting style with rich deep teal and warm golden undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvGC-A9sNouhU-vpqoCrlAdNodptgqElG_dOSgomr2-hy7MCKqU-G7djPyg-nawUxixFXbJbyCLtVHfEt8-G-6sUhcD8SH6vWFt2Tu9VVD39QFTFphkcntc5lBB3R_-p7In95jWovRcK6tHSaDLWelP2UnGgdHuHhxpDq-mp4wH-y_cXOcnlTpFWOFGu9Fsdijk4y-k7RrnV0uc5L_vAL8R4JkuXG-06f9gEYnnfWJMDfsu7C4zZonvw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/20"></div>
+<!-- Archival Stamp Icon -->
+<div class="absolute top-space-sm left-space-md w-7 h-7 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-sm">verified</span>
+</div>
+<!-- Badges Floating Over Image -->
+<div class="absolute bottom-space-sm left-space-md flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Acabada
+            </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-highest/90 backdrop-blur-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">public</span>
+              Pública
+            </span>
+</div>
+</div>
+<!-- Body Details -->
+<div class="flex-1 p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-snug">
+                Senderos de musgo y piedra
+              </h2>
+<div class="relative">
+<button aria-label="Opciones de historia" class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+              Recorrí los pinares de Guadarrama durante la primera escarcha. Entre las raíces de roble aún descansaban las huellas del pasado...
+            </p>
+</div>
+<!-- Card Footer Metadata -->
+<div class="pt-space-sm bg-surface-container-low/50">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">menu_book</span>
+<span>Publicado el 12 oct 2024</span>
+</div>
+<span class="font-semibold text-on-surface-variant">2.420 palabras</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary uppercase font-semibold">#Naturaleza • #Caminos</span>
+<a class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-sm text-label-sm font-bold uppercase transition-colors" href="#">
+<span>Leer relato</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 3: Diario de un otoño en París -->
+<article class="group relative flex flex-col bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(45,36,30,0.04),0_8px_20px_rgba(45,36,30,0.03)] hover:shadow-[0_12px_28px_rgba(45,36,30,0.08)] transition-all duration-300">
+<!-- Cover Image Container -->
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Vintage black mechanical typewriter on a dark wooden oak writing desk beside a bundle of dried purple lavender stems, antique manuscript envelopes, and warm candle glow, evocative European writer study room aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiAzOvOtFl5qQDQ1T3c0A8f-BtmhdXMjGIKpwB7UaWxQCBqBkf1bFq22SixQxZsN2huILg1gJetBxMAHytd-K2y11MF4bdHsRjxoz_lX0JCS7GwMgiW129TbcoFZIz-oIvNQ5xY6bp-KYcZ0-ss2e9XOgaCz3rgoKCWVERy4O_dNZoYfdle935HGc50gVUOCmw4NzSu8XOBOZ1c0ze2rTQ0JTo0SzFlv77m6d4CZYFZtmwXra4UTVyTA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/20"></div>
+<!-- Badges Floating Over Image -->
+<div class="absolute bottom-space-sm left-space-md flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Acabada
+            </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-highest/90 backdrop-blur-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">lock</span>
+              Privada
+            </span>
+</div>
+</div>
+<!-- Body Details -->
+<div class="flex-1 p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-snug">
+                Diario de un otoño en París
+              </h2>
+<div class="relative">
+<button aria-label="Opciones de historia" class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+              Las mañanas en el Boulevard Saint-Germain olían a café tostado y papel húmedo de los libreros del Sena. Escribí sin parar durante cuarenta días...
+            </p>
+</div>
+<!-- Card Footer Metadata -->
+<div class="pt-space-sm bg-surface-container-low/50">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">history_edu</span>
+<span>Editado el 28 sep 2024</span>
+</div>
+<span class="font-semibold text-on-surface-variant">5.100 palabras</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary uppercase font-semibold">#Viajes • #Memorias</span>
+<a class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-sm text-label-sm font-bold uppercase transition-colors" href="#">
+<span>Abrir tomo</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 4: Bitácora del Viento del Norte -->
+<article class="group relative flex flex-col bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(45,36,30,0.04),0_8px_20px_rgba(45,36,30,0.03)] hover:shadow-[0_12px_28px_rgba(45,36,30,0.08)] transition-all duration-300">
+<!-- Bookmark Ribbon Tag -->
+<div class="absolute top-0 right-6 z-20 w-5 h-8 bg-tertiary-container rounded-b-sm shadow-sm flex items-end justify-center pb-1">
+<span class="w-1 h-1 rounded-full bg-on-tertiary opacity-75"></span>
+</div>
+<!-- Cover Image Container -->
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Majestic antique wooden tall ship sailing through deep indigo starlit open ocean under glowing celestial constellations and silver moonlight reflections on calm waters, romantic adventure book illustration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIzoWIwYe4zbxzVD8ybDYTubbThqbWjYVQHLoYCNw21V8mXVKlcF0EXjpvuy3Z3a1WHkAsXD7rZ6IuH0wAKRL0O_1k90fnF-YnBHQA2F4eMKZO_g2LbdWxht6-8gLVLvArH-gYTYAj2mACi-VSb7BFZYPG6ThMu9BPsUmpgYupigVPJEKSNPukwKTzl-M46iu7PposQ7j2qfQUZ4_DUMSxyL9_gkt0df-oaIXDsQHXomvMBMinyuEqhw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/20"></div>
+<!-- Badges Floating Over Image -->
+<div class="absolute bottom-space-sm left-space-md flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-container"></span>
+              Borrador
+            </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-highest/90 backdrop-blur-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">public</span>
+              Pública
+            </span>
+</div>
+</div>
+<!-- Body Details -->
+<div class="flex-1 p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-snug">
+                Bitácora del Viento del Norte
+              </h2>
+<div class="relative">
+<button aria-label="Opciones de historia" class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+              Navegar a ciegas hacia las islas septentrionales guiados solo por un astrolabio heredado y notas manuscritas en tinta de calamar...
+            </p>
+</div>
+<!-- Card Footer Metadata -->
+<div class="pt-space-sm bg-surface-container-low/50">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">history_edu</span>
+<span>Editado el 15 sep 2024</span>
+</div>
+<span class="font-semibold text-on-surface-variant">890 palabras</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary uppercase font-semibold">#Mar • #Crónica</span>
+<a class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-sm text-label-sm font-bold uppercase transition-colors" data-path="editor" href="#">
+<span>Editar pluma</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 5: Herbarium de memorias familiares -->
+<article class="group relative flex flex-col bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(45,36,30,0.04),0_8px_20px_rgba(45,36,30,0.03)] hover:shadow-[0_12px_28px_rgba(45,36,30,0.08)] transition-all duration-300">
+<!-- Cover Image Container -->
+<div class="relative h-48 w-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Intricate antique botanical book engraving with pressed medicinal plants, dried wild flowers, hand-lettered Latin cursive calligraphy, and vintage parchment paper texture with sepia and olive hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7j6QFqhYGtJVhe7zPYV0R9VqCHjtB90kcIV5LBLsqDEtOxLenZ5tn8eCp5T4rK-zdv2yLJaujiY71MyxzHVP-n2BtOlNgLw21riUr5F2S2p0EWvf8pamIBhUEiJdnIMBANV1GdF5vuzCCd0oYN8tVDtnLr3MzhYkV6nJmJLWp1rnUM33D2zFGkgKWULoDoT2Fzij2JsvD85qcC4fP02H5SPxsKsIl19qPIPjBeTnsji_rpN5A8G2Cag"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-black/20"></div>
+<!-- Badges Floating Over Image -->
+<div class="absolute bottom-space-sm left-space-md flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Acabada
+            </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-highest/90 backdrop-blur-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">public</span>
+              Pública
+            </span>
+</div>
+</div>
+<!-- Body Details -->
+<div class="flex-1 p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-snug">
+                Herbarium de memorias familiares
+              </h2>
+<div class="relative">
+<button aria-label="Opciones de historia" class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+              Hojas secas prensadas entre las cartas de mi abuela. Cada flor guardaba la fecha exacta de un encuentro, una pérdida o un regreso...
+            </p>
+</div>
+<!-- Card Footer Metadata -->
+<div class="pt-space-sm bg-surface-container-low/50">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">menu_book</span>
+<span>Publicado el 3 ago 2024</span>
+</div>
+<span class="font-semibold text-on-surface-variant">1.750 palabras</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-secondary uppercase font-semibold">#Botánica • #Familia</span>
+<a class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-sm text-label-sm font-bold uppercase transition-colors" href="#">
+<span>Examinar</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 6: Interactive Call-to-Create Card (Dashed Parchment Frame) -->
+<a class="group relative flex flex-col items-center justify-center p-space-xl text-center min-h-[380px] rounded-2xl bg-surface-container/60 hover:bg-surface-container transition-all duration-300 shadow-sm" data-path="editor" href="#">
+<!-- Vintage Feather Crest Watermark Inside -->
+<div class="w-16 h-16 rounded-full bg-primary/10 group-hover:bg-primary group-hover:text-on-primary text-primary flex items-center justify-center transition-all duration-300 shadow-inner mb-space-md">
+<span class="material-symbols-outlined text-3xl font-light transition-transform duration-300 group-hover:scale-110">add</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs group-hover:text-primary transition-colors">
+          Crear nueva historia
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[240px] mb-space-lg leading-relaxed">
+          Empieza una página en blanco o elige una plantilla ilustrada para dar vida a tu crónica.
+        </p>
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high group-hover:bg-primary-container group-hover:text-on-primary text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span>Elegir formato</span>
+</div>
+<!-- Archival corner details -->
+<div class="absolute top-3 left-3 text-outline/30 font-display text-xs select-none">✦</div>
+<div class="absolute top-3 right-3 text-outline/30 font-display text-xs select-none">✦</div>
+<div class="absolute bottom-3 left-3 text-outline/30 font-display text-xs select-none">✦</div>
+<div class="absolute bottom-3 right-3 text-outline/30 font-display text-xs select-none">✦</div>
+</a>
+</div>
+<!-- Archival Bottom Footnote & Writing Prompt Banner -->
+<section class="mt-space-xl pt-space-lg">
+<div class="bg-surface-container-low rounded-2xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md shadow-[0_1px_6px_rgba(45,36,30,0.03)]">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-2xl">wb_incandescent</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Inspiración del día
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+              “Un viaje de diez mil leguas empieza siempre con una sola gota de tinta.” — Archivo Narra
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end md:self-center">
+<span class="font-label-sm text-label-sm text-outline">Cuaderno activo: 82% libre</span>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">
+            Gestionar cuadernos
+          </button>
+</div>
+</div>
+</section>
+</div>
+</div></main></div></body></html>
