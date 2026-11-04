@@ -1,7 +1,7 @@
 // src/components/Pluma.jsx
 // Tintero flotante y Asistente de Escritura con animación CSS pura
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const IDEAS = [
   'Alguien dejó una lámpara tibia en el tercer descansillo, como si acabara de huir.',
@@ -9,7 +9,11 @@ const IDEAS = [
   'Entre las páginas del diario descansaba una flor de sauco con fecha de 1952.',
 ];
 
-export default function Pluma({ onInsertarIdea }) {
+interface PlumaProps {
+  onInsertarIdea?: (ideaHtml: string) => void;
+}
+
+export default function Pluma({ onInsertarIdea }: PlumaProps) {
   const [abierto, setAbierto] = useState(false);
 
   return (

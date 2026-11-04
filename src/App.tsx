@@ -1,7 +1,6 @@
 // src/App.jsx
 // Enrutador principal de Narra con proveedor de autenticación y rutas protegidas
 
-import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import LayoutPrincipal from './layouts/LayoutPrincipal';

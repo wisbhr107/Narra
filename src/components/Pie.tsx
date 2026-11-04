@@ -1,7 +1,6 @@
 // src/components/Pie.jsx
 // Pie de página editorial con el sello Narra
 
-import React from 'react';
 import { ASSETS } from '../data/datosEjemplo';
 
 export default function Pie() {

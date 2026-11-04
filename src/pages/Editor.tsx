@@ -1,21 +1,23 @@
 // src/pages/Editor.jsx
 // Pantalla del Editor de Manuscritos con TipTap, autoguardado y paneles CSS
 
-import React, { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import type { Editor as TiptapEditor } from '@tiptap/core';
 import { HISTORIAS_INICIALES, ASSETS } from '../data/datosEjemplo';
 import PanelLateral from '../components/PanelLateral';
 import HojaEscritura from '../components/HojaEscritura';
 import Pluma from '../components/Pluma';
+import type { AparienciaEditor, BorradorEditor, PaginaManuscrito } from '../types';
 
-const PAGINAS_INICIALES = {
+const PAGINAS_INICIALES: Record<number, PaginaManuscrito> = {
   1: { capitulo: 'Capítulo I — La marea creciente', html: '<p>El viejo faro de Punta Niebla llevaba treinta inviernos en silencio, o al menos eso decían los pescadores de la cala. Sin embargo, anoche la linterna volvió a proyectar su haz ámbar sobre los acantilados de basalto. Clara ajustó su abrigo de lana, abrió su libreta de campo y comenzó a anotar cada destello con caligrafía apresurada.</p><p>El salitre impregnaba las páginas amarillentas, pero había algo más en la brisa: el aroma seco del cedro tallado y la cera derretida.</p>' },
   2: { capitulo: 'Capítulo II — La escalera de caracol', html: '<p>Los peldaños de hierro forjado quejaban bajo el peso de sus pasos. Ciento cuarenta escalones en espiral ascendían en la penumbra, iluminados solo por rendijas estrechas donde el viento silbaba notas graves.</p>' },
   3: { capitulo: 'Capítulo III — El libro de bitácora', html: '<p>Sobre el atril de roble de la cámara alta descansaba el compendio encuadernado en cuero crudo. Al abrirlo, la caligrafía sepia del último torrero relataba no tormentas, sino nombres de quienes habían llegado buscando refugio.</p>' },
   4: { capitulo: 'Capítulo IV — El primer destello', html: '<p>Clara encendió la mecha con pulso firme. El prisma de Fresnel giró lentamente sobre su baño de mercurio y una cascada de luz dorada barrió la inmensidad del océano.</p>' },
 };
 
-function leerBorrador(clave) {
+function leerBorrador(clave: string): BorradorEditor | null {
   try {
     const guardado = localStorage.getItem(clave);
     return guardado ? JSON.parse(guardado) : null;
@@ -29,22 +31,22 @@ export default function EditorRuta() {
   return <Editor key={id || 'nueva'} id={id} />;
 }
 
-function Editor({ id }) {
+function Editor({ id }: { id?: string }) {
   const historia = HISTORIAS_INICIALES.find((h) => h.id === id);
 
   const claveBorrador = `narra_borrador_${id || 'nueva'}`;
   const [titulo, setTitulo] = useState(() => leerBorrador(claveBorrador)?.titulo || historia?.titulo || 'El susurro del faro olvidado');
   const [paginaActual, setPaginaActual] = useState(1);
-  const [paginas, setPaginas] = useState(() => {
+  const [paginas, setPaginas] = useState<Record<number, PaginaManuscrito>>(() => {
     return leerBorrador(claveBorrador)?.paginas || PAGINAS_INICIALES;
   });
 
   const [palabras, setPalabras] = useState(0);
-  const [panelAbierto, setPanelAbierto] = useState(null);
+  const [panelAbierto, setPanelAbierto] = useState<string | null>(null);
   const [guardadoManual, setGuardadoManual] = useState(false);
   const [textoGuardado, setTextoGuardado] = useState('hace 2 min');
-  const [apariencia, setApariencia] = useState({ colorPapel: '#ffffff', fuente: 'Merriweather' });
-  const [editor, setEditor] = useState(null);
+  const [apariencia, setApariencia] = useState<AparienciaEditor>({ colorPapel: '#ffffff', fuente: 'Merriweather' });
+  const [editor, setEditor] = useState<TiptapEditor | null>(null);
   const [toolbarVersion, setTick] = useState(0);
   const actualizarEstadoEditor = useCallback(() => setTick((tick) => tick + 1), []);
 
@@ -65,7 +67,7 @@ function Editor({ id }) {
     return () => clearTimeout(temporizador);
   }, [paginas, titulo, claveBorrador]);
 
-  const togglePanel = (nombre) => {
+  const togglePanel = (nombre: string) => {
     setPanelAbierto((prev) => (prev === nombre ? null : nombre));
   };
 
@@ -83,7 +85,7 @@ function Editor({ id }) {
     }, 2000);
   };
 
-  const handleActualizarContenido = useCallback((html, totalPalabras) => {
+  const handleActualizarContenido = useCallback((html: string, totalPalabras: number) => {
     setPaginas((prev) => ({
       ...prev,
       [paginaActual]: { ...prev[paginaActual], html },
@@ -91,7 +93,7 @@ function Editor({ id }) {
     setPalabras(totalPalabras);
   }, [paginaActual]);
 
-  const handleCambiarCapitulo = useCallback((capitulo) => {
+  const handleCambiarCapitulo = useCallback((capitulo: string) => {
     setPaginas((prev) => ({
       ...prev,
       [paginaActual]: { ...prev[paginaActual], capitulo },

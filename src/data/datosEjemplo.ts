@@ -15,6 +15,7 @@ import mis2 from '../assets/img/mis-2.jpg';
 import mis3 from '../assets/img/mis-3.jpg';
 import mis4 from '../assets/img/mis-4.jpg';
 import mis5 from '../assets/img/mis-5.jpg';
+import type { Categoria, Historia, Usuario } from '../types';
 
 export const ASSETS = {
   logo: logoImg,
@@ -22,7 +23,7 @@ export const ASSETS = {
 };
 
 // Usuarios predefinidos (incluye la cuenta de administrador)
-export const USUARIOS_INICIALES = [
+export const USUARIOS_INICIALES: Usuario[] = [
   {
     id: 'usr-admin',
     nombre: 'Elena Guardiana',
@@ -42,7 +43,7 @@ export const USUARIOS_INICIALES = [
 ];
 
 // Categorías iniciales del catálogo
-export const CATEGORIAS_INICIALES = [
+export const CATEGORIAS_INICIALES: Categoria[] = [
   { id: 'cat-1', nombre: 'Fantasía', descripcion: 'Relatos míticos, runas y leyendas', icono: '✦', fecha: '12 Oct 2024' },
   { id: 'cat-2', nombre: 'Memorias', descripcion: 'Reminiscencias de linaje y familia', icono: '❦', fecha: '28 Sep 2024' },
   { id: 'cat-3', nombre: 'Diario íntimo', descripcion: 'Pensamientos confesionales a puerta cerrada', icono: '📜', fecha: '04 Nov 2024' },
@@ -52,7 +53,7 @@ export const CATEGORIAS_INICIALES = [
 ];
 
 // Historias iniciales con la estructura requerida
-export const HISTORIAS_INICIALES = [
+export const HISTORIAS_INICIALES: Historia[] = [
   {
     id: 'el-susurro-del-faro-olvidado',
     titulo: 'El susurro del faro olvidado',

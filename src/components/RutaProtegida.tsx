@@ -1,11 +1,16 @@
 // src/components/RutaProtegida.jsx
 // Protege rutas para usuarios autenticados o con rol de administrador
 
-import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
+import type { ReactNode } from 'react';
 
-export default function RutaProtegida({ children, requiereAdmin = false }) {
+interface RutaProtegidaProps {
+  children: ReactNode;
+  requiereAdmin?: boolean;
+}
+
+export default function RutaProtegida({ children, requiereAdmin = false }: RutaProtegidaProps) {
   const { usuario } = useAuth();
   const location = useLocation();
 

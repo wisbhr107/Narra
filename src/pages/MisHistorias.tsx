@@ -1,16 +1,17 @@
 // src/pages/MisHistorias.jsx
 // Pantalla de Mis Historias de Narra (diseño fiel a Stitch)
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HISTORIAS_INICIALES } from '../data/datosEjemplo';
 import BarraLateralMisHistorias from '../components/BarraLateralMisHistorias';
 import TarjetaMisHistorias from '../components/TarjetaMisHistorias';
+import type { Historia } from '../types';
 
 const TEMAS = ['#Todos', '#Faro', '#Viajes', '#Borradores', '#Naturaleza'];
 
 export default function MisHistorias() {
-  const [historias, setHistorias] = useState(HISTORIAS_INICIALES);
+  const [historias, setHistorias] = useState<Historia[]>(HISTORIAS_INICIALES);
   const [busqueda, setBusqueda] = useState('');
   const [categoria, setCategoria] = useState('Todas');
   const [etiqueta, setEtiqueta] = useState('Todas');
@@ -28,16 +29,16 @@ export default function MisHistorias() {
       return matchBusqueda && matchCat && matchTag && matchTema;
     })
     .sort((a, b) => {
-      if (orden === 'Palabras') return b.palabras - a.palabras;
+      if (orden === 'Palabras') return (b.palabras ?? 0) - (a.palabras ?? 0);
       if (orden === 'Título') return a.titulo.localeCompare(b.titulo);
       return 0; // Por defecto 'Recientes' mantiene el orden cronológico
     });
 
-  const eliminarHistoria = (id) => {
+  const eliminarHistoria = (id: string) => {
     setHistorias((prev) => prev.filter((h) => h.id !== id));
   };
 
-  const totalPalabras = historias.reduce((acc, h) => acc + h.palabras, 0);
+  const totalPalabras = historias.reduce((acc, h) => acc + (h.palabras ?? 0), 0);
 
   return (
     <div className="flex w-full min-h-screen bg-background">

@@ -1,7 +1,18 @@
 // src/components/PanelLateral.jsx
 // Panel lateral deslizable con herramientas de formato TipTap, pegatinas y apariencia
 
-import React from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import type { Editor as TiptapEditor } from '@tiptap/core';
+import type { AparienciaEditor } from '../types';
+
+interface PanelLateralProps {
+  panelAbierto: string | null;
+  onCerrar: () => void;
+  editor: TiptapEditor | null;
+  toolbarVersion: number;
+  apariencia: AparienciaEditor;
+  onCambiarApariencia: Dispatch<SetStateAction<AparienciaEditor>>;
+}
 
 export default function PanelLateral({
   panelAbierto,
@@ -10,11 +21,11 @@ export default function PanelLateral({
   toolbarVersion,
   apariencia,
   onCambiarApariencia,
-}) {
+}: PanelLateralProps) {
   if (!panelAbierto) return null;
 
   // Clase común para marcar botones activos con el color teal del diseño
-  const botonClase = (activo, deshabilitado = false) =>
+  const botonClase = (activo: boolean, deshabilitado = false) =>
     `p-2 rounded-xl font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors ${
       deshabilitado
         ? 'opacity-30 cursor-not-allowed bg-surface text-outline'
@@ -71,11 +82,11 @@ export default function PanelLateral({
             <section aria-labelledby="texto-estilo-heading" className="space-y-2 border-b border-outline-variant/50 pb-space-md">
               <h4 id="texto-estilo-heading" className="font-label-sm text-label-sm text-secondary uppercase tracking-wide font-bold">Estilo de texto</h4>
               <div className="grid grid-cols-3 gap-1.5">
-                {[
+                {([
                   ['bold', 'Negrita', 'format_bold', () => editor.chain().focus().toggleBold().run()],
                   ['italic', 'Cursiva', 'format_italic', () => editor.chain().focus().toggleItalic().run()],
                   ['underline', 'Subrayado', 'format_underlined', () => editor.chain().focus().toggleUnderline().run()],
-                ].map(([mark, label, icon, action]) => {
+                ] as const).map(([mark, label, icon, action]) => {
                   const active = editor.isActive(mark);
                   return <button key={mark} type="button" aria-pressed={active} onClick={action} className={`${botonClase(active)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}>
                     <span className="material-symbols-outlined text-base" aria-hidden="true">{icon}</span><span>{label}</span>
@@ -87,12 +98,12 @@ export default function PanelLateral({
             <section aria-labelledby="texto-estructura-heading" className="space-y-2 border-b border-outline-variant/50 pb-space-md">
               <h4 id="texto-estructura-heading" className="font-label-sm text-label-sm text-secondary uppercase tracking-wide font-bold">Estructura</h4>
               <div className="grid grid-cols-2 gap-1.5">
-                {[
+                {([
                   ['heading', 'Encabezado', 'title', () => editor.chain().focus().toggleHeading({ level: 2 }).run(), editor.isActive('heading', { level: 2 })],
                   ['blockquote', 'Cita', 'format_quote', () => editor.chain().focus().toggleBlockquote().run(), editor.isActive('blockquote')],
                   ['bulletList', 'Lista con viñetas', 'format_list_bulleted', () => editor.chain().focus().toggleBulletList().run(), editor.isActive('bulletList')],
                   ['orderedList', 'Lista numerada', 'format_list_numbered', () => editor.chain().focus().toggleOrderedList().run(), editor.isActive('orderedList')],
-                ].map(([key, label, icon, action, active]) => <button key={key} type="button" aria-pressed={active} onClick={action} className={`${botonClase(active)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}>
+                ] as const).map(([key, label, icon, action, active]) => <button key={key} type="button" aria-pressed={active} onClick={action} className={`${botonClase(active)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}>
                   <span className="material-symbols-outlined text-base" aria-hidden="true">{icon}</span><span>{label}</span>
                 </button>)}
               </div>
@@ -101,12 +112,12 @@ export default function PanelLateral({
             <section aria-labelledby="texto-alineacion-heading" className="space-y-2 border-b border-outline-variant/50 pb-space-md">
               <h4 id="texto-alineacion-heading" className="font-label-sm text-label-sm text-secondary uppercase tracking-wide font-bold">Alineación y resaltado</h4>
               <div className="grid grid-cols-2 gap-1.5">
-                {[
+                {([
                   ['left', 'Alinear a la izquierda', 'format_align_left'],
                   ['center', 'Centrar', 'format_align_center'],
                   ['right', 'Alinear a la derecha', 'format_align_right'],
                   ['justify', 'Justificar', 'format_align_justify'],
-                ].map(([align, label, icon]) => {
+                ] as const).map(([align, label, icon]) => {
                   const active = editor.isActive({ textAlign: align });
                   return <button key={align} type="button" aria-label={label} aria-pressed={active} title={label} onClick={() => editor.chain().focus().setTextAlign(align).run()} className={`${botonClase(active)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}>
                     <span className="material-symbols-outlined text-base" aria-hidden="true">{icon}</span><span>{label}</span>
@@ -121,10 +132,10 @@ export default function PanelLateral({
             <section aria-labelledby="texto-historial-heading" className="space-y-2">
               <h4 id="texto-historial-heading" className="font-label-sm text-label-sm text-secondary uppercase tracking-wide font-bold">Historial de edición</h4>
               <div className="grid grid-cols-2 gap-1.5">
-                {[
+                {([
                   ['undo', 'Deshacer', 'undo', editor.can().undo()],
                   ['redo', 'Rehacer', 'redo', editor.can().redo()],
-                ].map(([command, label, icon, available]) => <button key={command} type="button" disabled={!available} aria-describedby="historial-ayuda" onClick={() => editor.chain().focus()[command]().run()} className={`${botonClase(false, !available)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}>
+                ] as const).map(([command, label, icon, available]) => <button key={command} type="button" disabled={!available} aria-describedby="historial-ayuda" onClick={() => editor.chain().focus()[command]().run()} className={`${botonClase(false, !available)} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}>
                   <span className="material-symbols-outlined text-base" aria-hidden="true">{icon}</span><span>{label}</span>
                 </button>)}
               </div>

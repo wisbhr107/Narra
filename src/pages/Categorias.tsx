@@ -1,22 +1,27 @@
 // src/pages/Categorias.jsx
 // Gestión de Categorías para el Administrador (diseño fiel a Stitch)
 
-import React, { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { CATEGORIAS_INICIALES, HISTORIAS_INICIALES } from '../data/datosEjemplo';
+import type { Categoria } from '../types';
+
+interface CategoriaBloqueada extends Categoria {
+  numHistorias: number;
+}
 
 export default function Categorias() {
-  const [categorias, setCategorias] = useState(CATEGORIAS_INICIALES);
+  const [categorias, setCategorias] = useState<Categoria[]>(CATEGORIAS_INICIALES);
   const [mostrarCrear, setMostrarCrear] = useState(false);
   const [nuevoNombre, setNuevoNombre] = useState('');
   const [busqueda, setBusqueda] = useState('');
-  const [categoriaBloqueada, setCategoriaBloqueada] = useState(null);
+  const [categoriaBloqueada, setCategoriaBloqueada] = useState<CategoriaBloqueada | null>(null);
 
   // Calcular historias asociadas por categoría
-  const contarHistorias = (catNombre) => {
+  const contarHistorias = (catNombre: string) => {
     return HISTORIAS_INICIALES.filter((h) => h.categoria === catNombre).length;
   };
 
-  const handleCrear = (e) => {
+  const handleCrear = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!nuevoNombre.trim()) return;
     const nueva = {
@@ -31,7 +36,7 @@ export default function Categorias() {
     setMostrarCrear(false);
   };
 
-  const handleEliminar = (cat) => {
+  const handleEliminar = (cat: Categoria) => {
     const num = contarHistorias(cat.nombre);
     if (num > 0) {
       setCategoriaBloqueada({ ...cat, numHistorias: num });
@@ -40,7 +45,7 @@ export default function Categorias() {
     }
   };
 
-  const handleRenombrar = (cat) => {
+  const handleRenombrar = (cat: Categoria) => {
     const nombre = window.prompt('Nuevo nombre para la categoría:', cat.nombre);
     if (nombre && nombre.trim()) {
       setCategorias(categorias.map((c) => (c.id === cat.id ? { ...c, nombre: nombre.trim() } : c)));

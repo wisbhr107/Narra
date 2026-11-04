@@ -1,6 +1,6 @@
 # Narra — Crónicas, memorias y cuadernos personales
 
-Narra es una aplicación web artesanal para escribir, organizar y leer historias y diarios personales. Diseñada con una estética editorial cálida de vitela, papel pautado y tipografías literarias (*Merriweather* y *Plus Jakarta Sans*).
+Narra es una aplicación web artesanal escrita en TypeScript para escribir, organizar y leer historias y diarios personales. Diseñada con una estética editorial cálida de vitela, papel pautado y tipografías literarias (*Merriweather* y *Plus Jakarta Sans*).
 
 ---
 
@@ -19,6 +19,11 @@ Narra es una aplicación web artesanal para escribir, organizar y leer historias
 3. **Compilar para producción:**
    ```bash
    npm run build
+   ```
+
+4. **Comprobar los tipos sin generar archivos:**
+   ```bash
+   npm run typecheck
    ```
 
 ---

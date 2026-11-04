@@ -1,7 +1,7 @@
 // src/pages/Registro.jsx
 // Pantalla de registro de Narra (diseño fiel a Stitch)
 
-import React, { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 
@@ -15,7 +15,7 @@ export default function Registro() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
 

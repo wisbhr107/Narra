@@ -1,10 +1,14 @@
 // src/components/Cabecera.jsx
 // Barra de navegación superior con enlaces, botón de escribir y menú de usuario
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { ASSETS } from '../data/datosEjemplo';
 import { useAuth } from '../context/useAuth';
+
+interface NavClassProps {
+  isActive: boolean;
+}
 
 export default function Cabecera() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -18,7 +22,7 @@ export default function Cabecera() {
   };
 
   // Clases dinámicas para marcar el enlace activo
-  const claseEnlace = ({ isActive }) =>
+  const claseEnlace = ({ isActive }: NavClassProps) =>
     isActive
       ? 'px-space-md py-space-xs transition-colors bg-surface-container-high text-on-surface font-semibold rounded-full font-label-lg text-label-lg shadow-xs'
       : 'px-space-md py-space-xs rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors';

@@ -1,7 +1,6 @@
 // src/components/AvisoEscritorio.jsx
 // Muestra un aviso amable en pantallas menores a 1024px
 
-import React from 'react';
 import { ASSETS } from '../data/datosEjemplo';
 
 export default function AvisoEscritorio() {

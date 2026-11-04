@@ -1,7 +1,7 @@
 // src/pages/Inicio.jsx
 // Pantalla de Inicio de Narra (diseño fiel a Stitch)
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CATEGORIAS_INICIALES, HISTORIAS_INICIALES } from '../data/datosEjemplo';
 import TarjetaHistoria from '../components/TarjetaHistoria';

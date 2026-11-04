@@ -1,7 +1,7 @@
 // src/pages/Lectura.jsx
 // Pantalla de lectura inmersiva de Narra (diseño fiel a Stitch)
 
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { HISTORIAS_INICIALES } from '../data/datosEjemplo';
 

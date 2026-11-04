@@ -1,13 +1,18 @@
 // src/context/AuthContext.jsx
 // Contexto para gestionar la sesión del usuario (guardada en localStorage)
 
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { USUARIOS_INICIALES } from '../data/datosEjemplo';
 import { AuthContext } from './authContextInstance';
+import type { ContextoAuth, Usuario } from '../types';
 
-export function AuthProvider({ children }) {
+interface AuthProviderProps {
+  children: import('react').ReactNode;
+}
+
+export function AuthProvider({ children }: AuthProviderProps) {
   // Estado para el usuario autenticado, inicializado directamente desde localStorage
-  const [usuario, setUsuario] = useState(() => {
+  const [usuario, setUsuario] = useState<ContextoAuth['usuario']>(() => {
     try {
       const sesionActiva = localStorage.getItem('narra_sesion');
       return sesionActiva ? JSON.parse(sesionActiva) : null;
@@ -25,9 +30,9 @@ export function AuthProvider({ children }) {
   }, []);
 
   // Función para iniciar sesión
-  const iniciarSesion = (email, password) => {
+  const iniciarSesion: ContextoAuth['iniciarSesion'] = (email, password) => {
     const raw = localStorage.getItem('narra_usuarios');
-    const lista = raw ? JSON.parse(raw) : USUARIOS_INICIALES;
+    const lista: Usuario[] = raw ? JSON.parse(raw) as Usuario[] : USUARIOS_INICIALES;
 
     const encontrado = lista.find(
       (u) => u.email.toLowerCase() === email.trim().toLowerCase() && u.password === password
@@ -50,7 +55,7 @@ export function AuthProvider({ children }) {
   };
 
   // Función para registrar un nuevo usuario
-  const registrar = (nombre, email, password) => {
+  const registrar: ContextoAuth['registrar'] = (nombre, email, password) => {
     if (!email || !email.includes('@')) {
       return { exito: false, mensaje: 'Introduce un correo electrónico válido.' };
     }
@@ -59,7 +64,7 @@ export function AuthProvider({ children }) {
     }
 
     const raw = localStorage.getItem('narra_usuarios');
-    const lista = raw ? JSON.parse(raw) : USUARIOS_INICIALES;
+    const lista: Usuario[] = raw ? JSON.parse(raw) as Usuario[] : USUARIOS_INICIALES;
 
     const yaExiste = lista.some(
       (u) => u.email.toLowerCase() === email.trim().toLowerCase()
@@ -69,7 +74,7 @@ export function AuthProvider({ children }) {
       return { exito: false, mensaje: 'Este correo electrónico ya está registrado.' };
     }
 
-    const nuevoUsuario = {
+    const nuevoUsuario: Usuario = {
       id: `usr-${Date.now()}`,
       nombre: nombre.trim() || email.split('@')[0],
       email: email.trim().toLowerCase(),
@@ -77,7 +82,7 @@ export function AuthProvider({ children }) {
       rol: 'lector',
     };
 
-    const nuevaLista = [...lista, nuevoUsuario];
+    const nuevaLista: Usuario[] = [...lista, nuevoUsuario];
     localStorage.setItem('narra_usuarios', JSON.stringify(nuevaLista));
 
     // Iniciamos sesión automáticamente con la nueva cuenta

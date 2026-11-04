@@ -1,15 +1,18 @@
 // src/components/BarraLateralMisHistorias.jsx
 // Barra lateral fija para la pantalla Mis Historias según Stitch
 
-import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ASSETS } from '../data/datosEjemplo';
 import { useAuth } from '../context/useAuth';
 
+interface NavClassProps {
+  isActive: boolean;
+}
+
 export default function BarraLateralMisHistorias() {
   const { usuario } = useAuth();
 
-  const claseNav = ({ isActive }) =>
+  const claseNav = ({ isActive }: NavClassProps) =>
     isActive
       ? 'flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-surface-container-high text-on-surface font-semibold rounded-xl'
       : 'flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-lg text-label-lg transition-colors';

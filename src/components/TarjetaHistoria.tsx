@@ -1,10 +1,14 @@
 // src/components/TarjetaHistoria.jsx
 // Tarjeta individual para mostrar una historia en Inicio o Mis historias
 
-import React from 'react';
 import { Link } from 'react-router-dom';
+import type { Historia } from '../types';
 
-export default function TarjetaHistoria({ historia }) {
+interface TarjetaHistoriaProps {
+  historia: Historia;
+}
+
+export default function TarjetaHistoria({ historia }: TarjetaHistoriaProps) {
   const { id, titulo, resumen, imagen, categoria, etiquetas, tiempoLectura, fechaPublicacion, autor, marcador, marcadorColor } = historia;
 
   return (

@@ -1,7 +1,7 @@
 // src/components/HojaEscritura.jsx
 // Hoja de escritura manuscrita con TipTap, papel pautado y estilo artesanal
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import Underline from '@tiptap/extension-underline';
@@ -10,6 +10,22 @@ import TextAlign from '@tiptap/extension-text-align';
 import Placeholder from '@tiptap/extension-placeholder';
 import CharacterCount from '@tiptap/extension-character-count';
 import { FontFamily, FontSize } from '@tiptap/extension-text-style';
+import type { Editor as TiptapEditor } from '@tiptap/core';
+import type { AparienciaEditor } from '../types';
+
+interface HojaEscrituraProps {
+  contenidoInicial: string;
+  onActualizarContenido: (html: string, palabras: number) => void;
+  onEditorCreado: (editor: TiptapEditor | null) => void;
+  onEstadoEditor: () => void;
+  tituloHistoria: string;
+  onCambiarTitulo: (titulo: string) => void;
+  capituloTexto: string;
+  onCambiarCapitulo: (capitulo: string) => void;
+  paginaActual: number;
+  totalPaginas: number;
+  apariencia: AparienciaEditor;
+}
 
 export default function HojaEscritura({
   contenidoInicial,
@@ -23,7 +39,7 @@ export default function HojaEscritura({
   paginaActual,
   totalPaginas,
   apariencia,
-}) {
+}: HojaEscrituraProps) {
   // Inicializamos TipTap con las extensiones requeridas
   const editor = useEditor({
     extensions: [
@@ -71,7 +87,7 @@ export default function HojaEscritura({
   useEffect(() => {
     if (editor && contenidoInicial !== undefined) {
       if (editor.getHTML() !== contenidoInicial) {
-        editor.commands.setContent(contenidoInicial, false);
+        editor.commands.setContent(contenidoInicial, { emitUpdate: false });
       }
     }
   }, [contenidoInicial, editor]);

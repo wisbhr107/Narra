@@ -1,10 +1,17 @@
 // src/components/TarjetaMisHistorias.jsx
 // Tarjeta individual para Mis Historias con menú de editar y eliminar
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import type { Historia } from '../types';
 
-export default function TarjetaMisHistorias({ historia, esLista, onEliminar }) {
+interface TarjetaMisHistoriasProps {
+  historia: Historia;
+  esLista: boolean;
+  onEliminar: (id: string) => void;
+}
+
+export default function TarjetaMisHistorias({ historia, esLista, onEliminar }: TarjetaMisHistoriasProps) {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const { id, titulo, resumen, imagen, estado, visibilidad, palabras, fechaEdicion, etiquetas, marcadorColor } = historia;
 
